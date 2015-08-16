@@ -1,0 +1,31 @@
+{
+  "name": "rasm-web",
+  "version": "0.0.1",
+  "description": "Website for trying out RASM",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reg4in/rasm-web.git"
+  },
+  "keywords": [
+    "rasm",
+    "website",
+    "assembler",
+    "assembly",
+    "vm",
+    "8bit"
+  ],
+  "author": "reg4in",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reg4in/rasm-web/issues"
+  },
+  "homepage": "https://github.com/reg4in/rasm-web#readme",
+  "dependencies": {
+    "rasm-asm": "0.0.1",
+    "rasm-vm": "0.0.1"
+  }
+}
