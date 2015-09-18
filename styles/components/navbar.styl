@@ -1,2 +1,22 @@
+@import '../clearfix.styl'
+
 .navbar
   border-bottom 1px solid
+
+.navbar-links
+  clearfix()
+
+.navbar-link
+  float left
+
+  padding .2em .5em
+
+  color inherit
+  font-size 1.5em
+  text-decoration none
+
+  &:hover
+    text-decoration underline
+
+.navbar-link-big
+  font-weight 700

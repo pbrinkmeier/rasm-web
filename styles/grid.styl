@@ -1,0 +1,13 @@
+@import './clearfix.styl'
+
+column_count = 12
+
+.grid-row:after
+  clearfix()
+
+[class*='grid-col-']
+  float left
+
+for i in (1..column_count)
+  .grid-col-{i}
+    width i * (100% / column_count)
