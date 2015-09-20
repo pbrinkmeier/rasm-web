@@ -5,6 +5,9 @@
 @import './components/btn.styl'
 @import './components/section.styl'
 
+ip_colour = blue
+sp_colour = red
+
 *
   margin 0
   padding 0
@@ -25,6 +28,35 @@ table, textarea
 th, td
   text-align center
 
+td
+  position relative
+
+.ip-label
+  color ip_colour
+
+.sp-label
+  color sp_colour
+
+.ip-focus:before,
+.sp-focus:before
+  content ' '
+
+  display block
+  position absolute
+
+  left 0
+  top 0
+  right 0
+  bottom 0
+
+  border 2px solid
+
+.ip-focus:before
+  border-color ip_colour
+
+.sp-focus:before
+  border-color sp_colour
+
 .container
   margin 0 auto
   width 960px
@@ -32,7 +64,7 @@ th, td
 .content
   padding-top 1em
 
-.js-code
+textarea
   resize none
 
   box-sizing border-box
