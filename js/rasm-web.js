@@ -11,10 +11,26 @@ window.runtime = runtime
 
 runtime.events.on('updateInstructionPointer', function (value) {
   Ui.ip.innerHTML = prettyByte(value)
+
+  var oldFocus = document.querySelector('.js-ip-focus')
+
+  if (oldFocus !== null) {
+    oldFocus.className = ''
+  }
+
+  Ui.ramCells[value].className = 'ip-focus js-ip-focus'
 })
 
 runtime.events.on('updateStackPointer', function (value) {
   Ui.sp.innerHTML = prettyByte(value)
+
+  var oldFocus = document.querySelector('.js-sp-focus')
+
+  if (oldFocus !== null) {
+    oldFocus.className = ''
+  }
+
+  Ui.ramCells[value].className = 'sp-focus js-sp-focus'
 })
 
 runtime.events.on('updateCBit', function (value) {
