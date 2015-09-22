@@ -1,4 +1,4 @@
-/* @import url('http://fonts.googleapis.com/css?family=Lato:400,700') */
+/* @import url('http://fonts.googleapis.com/css?family=Lato:400,700|Droid+Sans+Mono:400,700') */
 
 @import './grid.styl'
 @import './components/navbar.styl'
@@ -23,7 +23,14 @@ body
 table, textarea
   width 100%
 
-  font-family 'Source Code Pro', Inconsolata, monospace
+  font 0.9em/1.5em 'Droid Sans Mono', Inconsolata, monospace
+
+textarea
+  resize none
+
+  box-sizing border-box
+
+  height 30em
 
 th, td
   text-align center
@@ -63,10 +70,3 @@ td
 
 .content
   padding-top 1em
-
-textarea
-  resize none
-
-  box-sizing border-box
-
-  height 30em
