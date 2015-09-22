@@ -67,3 +67,30 @@ Ui.assemble.addEventListener('click', function () {
 Ui.step.addEventListener('click', function () {
   runtime.step()
 })
+
+var running = false
+
+Ui.runStop.addEventListener('click', function () {
+  function runStep () {
+    if (running) {
+      runtime.step()
+
+      if (runtime.halted) {
+        running = false
+        Ui.runStop.innerHTML = 'Run'
+      }
+
+      setTimeout(runStep, 250)
+    }
+  }
+
+  if (running) {
+    running = false
+    Ui.runStop.innerHTML = 'Run'
+  } else {
+    running = true
+    Ui.runStop.innerHTML = 'Stop'
+
+    runStep()
+  }
+})
