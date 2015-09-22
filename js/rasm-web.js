@@ -58,10 +58,14 @@ runtime.reset()
 Ui.assemble.addEventListener('click', function () {
   runtime.reset()
 
-  assemble(Ui.code.value)
-  .forEach(function (value, address) {
-    runtime.writeRam(address, value)
-  })
+  try {
+    assemble(Ui.code.value)
+    .forEach(function (value, address) {
+      runtime.writeRam(address, value)
+    })
+  } catch (e) {
+    console.log('Assembler error:\n' + e.message)
+  }
 })
 
 Ui.step.addEventListener('click', function () {
