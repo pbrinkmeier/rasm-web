@@ -25,41 +25,41 @@
             </section>
             <section>
               <header class="section-header">Code</header>
-              <textarea class="js-code">; load r0 and r1 with random values up to 15
+              <textarea class="js-code">  ; load r0 and r1 with random values up to 15
   int #20
   ld r1 r0
   int #20
   and r0 #0f
   and r1 #0f
-; then multiply them
+  ; then multiply them
   call multiply
   halt
-; multiplies r0 and r1 and loads r2 with the result
-; changes only r2
-; uses russian peasant multiplication
+  ; multiplies r0 and r1 and loads r2 with the result
+  ; changes only r2
+  ; uses russian peasant multiplication
 multiply:
   push r0
   push r1
   push r3
   ld r2 #00
 multiply.loop:
-; loop while r0 is not zero
+  ; loop while r0 is not zero
   cmp r0 #00
   jz multiply.return
-; if r0 is odd ...
+  ; if r0 is odd ...
   ld r3 r0
   and r3 #01
   cmp r3 #01
   jnz multiply.shifts
-; ... add r1 to the result
+  ; ... add r1 to the result
   add r2 r1
 multiply.shifts:
-; divide r0 by two, multiply r1 by two
+  ; divide r0 by two, multiply r1 by two
   asr r0
   asl r1
   jmp multiply.loop
 multiply.return:
-; reset r0, r1 and r3 to the initial values
+  ; reset r0, r1 and r3 to the initial values
   pop r3
   pop r1
   pop r0
